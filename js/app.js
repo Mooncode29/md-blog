@@ -2,6 +2,7 @@
 	"use strict";
 	console.log("start");
 	var app = {
+		url :'http://192.168.1.40:1337/',
 		init:function(){
 			// let's go
 			/*
@@ -31,12 +32,30 @@
 		},
 		ajaxFail : function(){
 			console.log("ajaxFail");
-		}
+		},
+
+		initMenu : function(){
+			var urlJson = "menu.json";
+			$.ajax(this.url + urlJson)
+			.done(app.ajaxMenuDone)
+			.fail(app.ajaxMenuFail);
+		},
+		ajaxMenuDone: function(dataJson){
+			console.log('ajaxMenuDone');
+			console.log(dataJson);
+
+		},
+
+		ajaxMenuFail : function(){
+			console.log('ajaxMenuFail');
+		},
 
 	};
 
 
 	$(document).ready(function(){
-		app.init();
+		//app.init();
+		
+		app.initMenu();
 	});
 })();
