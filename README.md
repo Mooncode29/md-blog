@@ -28,3 +28,13 @@ Sur votre serveur, créez une page HTML qui permet d'éditer les posts et une au
 La page d'édition dispose de trois champs, un champ `<input type="hidden'>` qui contient le nom du fichier à éditer, unn champ `<input type="text">` qui permet de mettre à jour le titre du post, et un champ `<textarea>` qui permet de modifier le contenu du fichier.
 
 Pour le formulaire d'ajout, la seule différence réside dans le type du champs qui contient le nom du fichier à créer est de type text.
+
+
+
+npm init
+git init
+npm install moment --save
+touch index.html
+touch app.js
+subl .
+caddy & bs
