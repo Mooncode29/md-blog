@@ -9,7 +9,7 @@
 			.done(app.ajaxMenuDone)
 			.fail(app.ajaxMenuFail);
 		},
-		
+				
 		ajaxMenuDone: function(dataJson){
 			for (var i = 0; i < dataJson.menu.length; i++){
 				var article = dataJson.menu[i];
@@ -22,18 +22,12 @@
 		},
 
 		ouvreArticle : function(){
-			
-			var lienJquery = $(this); //convertir notre noeud DOM en élément Jquery
-			console.log(lienJquery);
+			var lienJquery = $(this);
 			var path = lienJquery.data(path);
 			$.ajax( app.url + path.path)
 			.done(function(response){
-				// console.log(response);
-			//convertir le response(fichier md) en html avec showdown;
 			var converter = new showdown.Converter();
 			var fichierHtml = converter.makeHtml(response);
-			console.log(fichierHtml);
-			//afficher le fichier html sur ma page web
 			$('#md').html(fichierHtml);
 		});
 		},
@@ -41,12 +35,9 @@
 		ajaxMenuFail : function(){
 			console.log('ajaxMenuFail');
 		},
-
 	};
 
-
 	$(document).ready(function(){
-		//app.init();
 		app.initMenu();
 	});
 })();
