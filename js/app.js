@@ -4,8 +4,8 @@
 	var app = {
 		url :'http://192.168.1.40:1337/',
 		initMenu : function(){
-			var pathJson = "menu.json";
-			$.ajax(this.url + pathJson)
+			var urlJson = "menu.json";
+			$.ajax(this.url + urlJson)
 			.done(app.ajaxMenuDone)
 			.fail(app.ajaxMenuFail);
 		},
